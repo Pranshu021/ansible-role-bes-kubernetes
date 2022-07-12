@@ -1,2 +1,15 @@
 ---
 # tasks file for ansible-role-bes-kubernetes
+
+- include: "tasks/install.yml"
+  when: oah_command == "install"
+
+- include: "tasks/uninstall.yml"
+  when: oah_command == "uninstall"
+
+- include: "tasks/update.yml"
+  when: oah_command == "update"
+
+- include: "tasks/validate.yml"
+  when: oah_command == "validate"
+
